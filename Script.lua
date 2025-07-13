@@ -1,6 +1,13 @@
 -- Wastelane Hack [COMPLETÃO] - por ChatGPT
 
-local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source.lua"))()
+local success, Rayfield = pcall(function()
+    return loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source.lua"))()
+end)
+
+if not success then
+    warn("❌ Não foi possível carregar o Rayfield. Verifique sua conexão ou compatibilidade do executor.")
+    return
+end
 
 local Window = Rayfield:CreateWindow({
     Name = "Wastelane Hack [Completo]",
